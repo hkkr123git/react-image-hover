@@ -64,193 +64,11 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(3);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(5)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../node_modules/css-loader/index.js!./index.css", function() {
-		var newContent = require("!!../node_modules/css-loader/index.js!./index.css");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
-
-module.exports = require("react");
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _effects = __webpack_require__(7);
-
-var _effects2 = _interopRequireDefault(_effects);
-
-__webpack_require__(0);
-
-__webpack_require__(8);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ImageContentHover = function (_React$Component) {
-    _inherits(ImageContentHover, _React$Component);
-
-    function ImageContentHover() {
-        _classCallCheck(this, ImageContentHover);
-
-        return _possibleConstructorReturn(this, (ImageContentHover.__proto__ || Object.getPrototypeOf(ImageContentHover)).apply(this, arguments));
-    }
-
-    _createClass(ImageContentHover, [{
-        key: 'render',
-        value: function render() {
-            var _this2 = this;
-
-            var _props = this.props,
-                image = _props.image,
-                content = _props.content,
-                tileWidth = _props.tileWidth,
-                tileHeight = _props.tileHeight,
-                effect = _props.effect,
-                className = _props.className;
-
-            var classNameText = 'image-container ' + (className || '');
-            return _react2.default.createElement(
-                'div',
-                { className: classNameText, style: { width: tileWidth, height: tileHeight },
-                    onMouseOver: function onMouseOver(e) {
-                        _this2.onImgMouseOver(e, effect);
-                    },
-                    onMouseOut: function onMouseOut(e) {
-                        _this2.onImgMouseOut(e, effect);
-                    } },
-                _react2.default.createElement('img', { src: image, style: { width: tileWidth, height: tileHeight } }),
-                _react2.default.createElement(
-                    'div',
-                    { className: 'hover-content',
-                        ref: function ref(_ref) {
-                            return _this2.hoverRef = _ref;
-                        } },
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'title' },
-                        content.title || ''
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'body' },
-                        content.body || ''
-                    )
-                )
-            );
-        }
-    }, {
-        key: 'onImgMouseOver',
-        value: function onImgMouseOver(event, effect) {
-            if (this.hoverRef && this.hoverRef.classList) {
-                this.hoverRef.classList.remove(_effects2.default[effect]);
-                this.hoverRef.classList.add(effect);
-            }
-            event.stopPropagation();
-            event.preventDefault();
-        }
-    }, {
-        key: 'onImgMouseOut',
-        value: function onImgMouseOut(event, effect) {
-            if (this.hoverRef && this.hoverRef.classList) {
-                this.hoverRef.classList.add(_effects2.default[effect]);
-                this.hoverRef.classList.remove(effect);
-            }
-            event.stopPropagation();
-            event.preventDefault();
-        }
-    }]);
-
-    return ImageContentHover;
-}(_react2.default.Component);
-
-exports.default = ImageContentHover;
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(4)(false);
-// imports
-
-
-// module
-exports.push([module.i, ".image-container {\n    position: relative;\n}\n.image-container img {\n    object-fit: cover;\n}\n\n.image-container .hover-content {\n    width: 0px;\n    height: 0px;\n    visibility: hidden;\n    z-index: 5;\n    position: absolute;\n    overflow: hidden;\n    left: 0px;\n    top: 0px;\n    padding: 9px;\n    background: #e0cfcf;\n    opacity: 0;\n}", ""]);
-
-// exports
-
-
-/***/ }),
-/* 4 */
 /***/ (function(module, exports) {
 
 /*
@@ -332,7 +150,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 5 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -401,7 +219,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(6);
+var	fixUrls = __webpack_require__(9);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -736,7 +554,271 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var effects = {
+    fadeIn: 'fadeOut',
+    zoomIn: 'zoomOut',
+    slideVertical: 'slideVerticalOut',
+    slideHorizontal: 'slideHorizontalOut'
+};
+exports.default = effects;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(7);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(1)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../node_modules/css-loader/index.js!./effects.css", function() {
+		var newContent = require("!!../node_modules/css-loader/index.js!./effects.css");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(8);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(1)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../node_modules/css-loader/index.js!./index.css", function() {
+		var newContent = require("!!../node_modules/css-loader/index.js!./index.css");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+module.exports = require("react");
+
+/***/ }),
 /* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _effects = __webpack_require__(2);
+
+var _effects2 = _interopRequireDefault(_effects);
+
+__webpack_require__(4);
+
+__webpack_require__(3);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ImageContentHover = function (_React$Component) {
+    _inherits(ImageContentHover, _React$Component);
+
+    function ImageContentHover() {
+        _classCallCheck(this, ImageContentHover);
+
+        return _possibleConstructorReturn(this, (ImageContentHover.__proto__ || Object.getPrototypeOf(ImageContentHover)).apply(this, arguments));
+    }
+
+    _createClass(ImageContentHover, [{
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            var _props = this.props,
+                image = _props.image,
+                content = _props.content,
+                tileWidth = _props.tileWidth,
+                tileHeight = _props.tileHeight,
+                effect = _props.effect,
+                className = _props.className;
+
+            var classNameText = 'image-container ' + (className || '');
+            return _react2.default.createElement(
+                'div',
+                { className: classNameText, style: { width: tileWidth, height: tileHeight },
+                    onMouseOver: function onMouseOver(e) {
+                        _this2.onImgMouseOver(e, effect);
+                    },
+                    onMouseOut: function onMouseOut(e) {
+                        _this2.onImgMouseOut(e, effect);
+                    } },
+                _react2.default.createElement('img', { src: image, style: { width: tileWidth, height: tileHeight } }),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'hover-content',
+                        ref: function ref(_ref) {
+                            return _this2.hoverRef = _ref;
+                        } },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'title' },
+                        content.title || ''
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'body' },
+                        content.body || ''
+                    )
+                )
+            );
+        }
+    }, {
+        key: 'onImgMouseOver',
+        value: function onImgMouseOver(event, effect) {
+            if (this.hoverRef && this.hoverRef.classList) {
+                this.hoverRef.classList.remove(_effects2.default[effect]);
+                this.hoverRef.classList.add(effect);
+            }
+            event.stopPropagation();
+            event.preventDefault();
+        }
+    }, {
+        key: 'onImgMouseOut',
+        value: function onImgMouseOut(event, effect) {
+            if (this.hoverRef && this.hoverRef.classList) {
+                this.hoverRef.classList.add(_effects2.default[effect]);
+                this.hoverRef.classList.remove(effect);
+            }
+            event.stopPropagation();
+            event.preventDefault();
+        }
+    }]);
+
+    return ImageContentHover;
+}(_react2.default.Component);
+
+exports.default = ImageContentHover;
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// imports
+
+
+// module
+exports.push([module.i, ".image-container .hover-content.fadeIn {\n    width: calc(100% - 18px);\n    height: calc(100% - 18px);\n    visibility: visible;\n    opacity: 1;\n    transition: visibility 0s linear 0s, opacity 300ms;\n}\n\n.image-container .hover-content.fadeOut {\n    z-index: 0;\n    width: calc(100% - 18px);\n    height: calc(100% - 18px);\n    visibility: hidden;\n    opacity: 0;\n    transition: visibility 0s linear 300s, opacity 300ms;\n}\n\n.image-container .hover-content.slideVertical {\n    width: calc(100% - 18px);\n    height: calc(100% - 18px);\n    visibility: visible;\n    opacity: 1;\n    -webkit-transition: height 0.1s linear;\n    -moz-transition: height 0.1s linear;\n    -ms-transition: height 0.1s linear;\n    -o-transition: height 0.1s linear;\n    transition: height 0.1s linear;\n}\n\n.image-container .hover-content.slideVerticalOut {\n    z-index: 0;\n    width: calc(100% - 18px);\n    height: 0px;\n    visibility: visible;\n    padding-top: 0px;\n    padding-bottom: 0px;\n    opacity: 1;\n    -webkit-transition: height 0.1s linear;\n    -moz-transition: height 0.1s linear;\n    -ms-transition: height 0.1s linear;\n    -o-transition: height 0.1s linear;\n    transition: height 0.1s linear;\n}\n\n.image-container .hover-content.slideHorizontal {\n    width: calc(100% - 18px);\n    height: calc(100% - 18px);\n    visibility: visible;\n    opacity: 1;\n    -webkit-transition: width 0.1s linear;\n    -moz-transition: width 0.1s linear;\n    -ms-transition: width 0.1s linear;\n    -o-transition: width 0.1s linear;\n    transition: width 0.1s linear;\n}\n\n.image-container .hover-content.slideHorizontalOut {\n    z-index: 0;\n    width: 0px;\n    height: calc(100% - 18px);\n    visibility: visible;\n    overflow: hidden;\n    padding-left: 0px;\n    padding-right: 0px;\n    opacity: 1;\n    -webkit-transition: width 0.1s linear;\n    -moz-transition: width 0.1s linear;\n    -ms-transition: width 0.1s linear;\n    -o-transition: width 0.1s linear;\n    transition: width 0.1s linear;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// imports
+
+
+// module
+exports.push([module.i, ".image-container {\n    position: relative;\n}\n.image-container img {\n    object-fit: cover;\n}\n\n.image-container .hover-content {\n    width: 0px;\n    height: 0px;\n    visibility: hidden;\n    z-index: 5;\n    position: absolute;\n    overflow: hidden;\n    left: 0px;\n    top: 0px;\n    padding: 9px;\n    background: #e0cfcf;\n    opacity: 0;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 9 */
 /***/ (function(module, exports) {
 
 
@@ -828,88 +910,6 @@ module.exports = function (css) {
 	// send back the fixed css
 	return fixedCss;
 };
-
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-var effects = {
-    fadeIn: 'fadeOut',
-    zoomIn: 'zoomOut',
-    slideVertical: 'slideVerticalOut',
-    slideHorizontal: 'slideHorizontalOut'
-};
-exports.default = effects;
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(9);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(5)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../node_modules/css-loader/index.js!./effects.css", function() {
-		var newContent = require("!!../node_modules/css-loader/index.js!./effects.css");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(4)(false);
-// imports
-
-
-// module
-exports.push([module.i, ".image-container .hover-content.fadeIn {\n    width: calc(100% - 18px);\n    height: calc(100% - 18px);\n    visibility: visible;\n    opacity: 1;\n    transition: visibility 0s linear 0s, opacity 300ms;\n}\n\n.image-container .hover-content.fadeOut {\n    z-index: 0;\n    width: calc(100% - 18px);\n    height: calc(100% - 18px);\n    visibility: hidden;\n    opacity: 0;\n    transition: visibility 0s linear 300s, opacity 300ms;\n}\n\n.image-container .hover-content.slideVertical {\n    width: calc(100% - 18px);\n    height: calc(100% - 18px);\n    visibility: visible;\n    opacity: 1;\n    -webkit-transition: height 0.1s linear;\n    -moz-transition: height 0.1s linear;\n    -ms-transition: height 0.1s linear;\n    -o-transition: height 0.1s linear;\n    transition: height 0.1s linear;\n}\n\n.image-container .hover-content.slideVerticalOut {\n    z-index: 0;\n    width: calc(100% - 18px);\n    height: 0px;\n    visibility: visible;\n    padding-top: 0px;\n    padding-bottom: 0px;\n    opacity: 1;\n    -webkit-transition: height 0.1s linear;\n    -moz-transition: height 0.1s linear;\n    -ms-transition: height 0.1s linear;\n    -o-transition: height 0.1s linear;\n    transition: height 0.1s linear;\n}\n\n.image-container .hover-content.slideHorizontal {\n    width: calc(100% - 18px);\n    height: calc(100% - 18px);\n    visibility: visible;\n    opacity: 1;\n    -webkit-transition: width 0.1s linear;\n    -moz-transition: width 0.1s linear;\n    -ms-transition: width 0.1s linear;\n    -o-transition: width 0.1s linear;\n    transition: width 0.1s linear;\n}\n\n.image-container .hover-content.slideHorizontalOut {\n    z-index: 0;\n    width: 0px;\n    height: calc(100% - 18px);\n    visibility: visible;\n    overflow: hidden;\n    padding-left: 0px;\n    padding-right: 0px;\n    opacity: 1;\n    -webkit-transition: width 0.1s linear;\n    -moz-transition: width 0.1s linear;\n    -ms-transition: width 0.1s linear;\n    -o-transition: width 0.1s linear;\n    transition: width 0.1s linear;\n}\n", ""]);
-
-// exports
 
 
 /***/ })
