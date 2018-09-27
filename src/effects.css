@@ -41,3 +41,31 @@
     -o-transition: height 0.1s linear;
     transition: height 0.1s linear;
 }
+
+.image-container .hover-content.slideHorizontal {
+    width: calc(100% - 18px);
+    height: calc(100% - 18px);
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: width 0.1s linear;
+    -moz-transition: width 0.1s linear;
+    -ms-transition: width 0.1s linear;
+    -o-transition: width 0.1s linear;
+    transition: width 0.1s linear;
+}
+
+.image-container .hover-content.slideHorizontalOut {
+    z-index: 0;
+    width: 0px;
+    height: calc(100% - 18px);
+    visibility: visible;
+    overflow: hidden;
+    padding-left: 0px;
+    padding-right: 0px;
+    opacity: 1;
+    -webkit-transition: width 0.1s linear;
+    -moz-transition: width 0.1s linear;
+    -ms-transition: width 0.1s linear;
+    -o-transition: width 0.1s linear;
+    transition: width 0.1s linear;
+}
