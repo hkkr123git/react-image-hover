@@ -1,6 +1,6 @@
 {
   "name": "react-image-hover",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React Image hovering effects. Which will make your web app more interactive",
   "main": "build/index.js",
   "peerDependencies": {
