@@ -1,0 +1,11 @@
+.image-container .hover-content.fadeIn {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s linear 0s, opacity 300ms;
+}
+
+.image-container .hover-content.fadeOut {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 300s, opacity 300ms;
+}

@@ -1,0 +1,18 @@
+.image-container {
+    position: relative;
+}
+.image-container img {
+    object-fit: cover;
+}
+
+.image-container .hover-content {
+    visibility: hidden;
+    position: absolute;
+    width: calc(100% - 18px);
+    height: calc(100% - 18px);
+    left: 0px;
+    top: 0px;
+    padding: 9px;
+    background: #e0cfcf;
+    opacity: 0;
+}
