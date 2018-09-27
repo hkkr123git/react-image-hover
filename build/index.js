@@ -244,7 +244,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, ".image-container {\n    position: relative;\n}\n.image-container img {\n    object-fit: cover;\n}\n\n.image-container .hover-content {\n    visibility: hidden;\n    position: absolute;\n    width: calc(100% - 18px);\n    height: calc(100% - 18px);\n    left: 0px;\n    top: 0px;\n    padding: 9px;\n    background: #e0cfcf;\n    opacity: 0;\n}", ""]);
+exports.push([module.i, ".image-container {\n    position: relative;\n}\n.image-container img {\n    object-fit: cover;\n}\n\n.image-container .hover-content {\n    width: 0px;\n    height: 0px;\n    visibility: hidden;\n    z-index: 5;\n    position: absolute;\n    overflow: hidden;\n    left: 0px;\n    top: 0px;\n    padding: 9px;\n    background: #e0cfcf;\n    opacity: 0;\n}", ""]);
 
 // exports
 
@@ -843,7 +843,7 @@ Object.defineProperty(exports, "__esModule", {
 var effects = {
     fadeIn: 'fadeOut',
     zoomIn: 'zoomOut',
-    slideIn: 'slideOut'
+    slideVertical: 'slideVerticalOut'
 };
 exports.default = effects;
 
@@ -906,7 +906,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, ".image-container .hover-content.fadeIn {\n    visibility: visible;\n    opacity: 1;\n    transition: visibility 0s linear 0s, opacity 300ms;\n}\n\n.image-container .hover-content.fadeOut {\n    visibility: hidden;\n    opacity: 0;\n    transition: visibility 0s linear 300s, opacity 300ms;\n}", ""]);
+exports.push([module.i, ".image-container .hover-content.fadeIn {\n    width: calc(100% - 18px);\n    height: calc(100% - 18px);\n    visibility: visible;\n    opacity: 1;\n    transition: visibility 0s linear 0s, opacity 300ms;\n}\n\n.image-container .hover-content.fadeOut {\n    z-index: 0;\n    width: calc(100% - 18px);\n    height: calc(100% - 18px);\n    visibility: hidden;\n    opacity: 0;\n    transition: visibility 0s linear 300s, opacity 300ms;\n}\n\n.image-container .hover-content.slideVertical {\n    width: calc(100% - 18px);\n    height: calc(100% - 18px);\n    visibility: visible;\n    opacity: 1;\n    -webkit-transition: height 0.1s linear;\n    -moz-transition: height 0.1s linear;\n    -ms-transition: height 0.1s linear;\n    -o-transition: height 0.1s linear;\n    transition: height 0.1s linear;\n}\n\n.image-container .hover-content.slideVerticalOut {\n    z-index: 0;\n    width: calc(100% - 18px);\n    height: 0px;\n    visibility: visible;\n    padding-top: 0px;\n    padding-bottom: 0px;\n    opacity: 1;\n    -webkit-transition: height 0.1s linear;\n    -moz-transition: height 0.1s linear;\n    -ms-transition: height 0.1s linear;\n    -o-transition: height 0.1s linear;\n    transition: height 0.1s linear;\n}", ""]);
 
 // exports
 

@@ -6,10 +6,12 @@
 }
 
 .image-container .hover-content {
+    width: 0px;
+    height: 0px;
     visibility: hidden;
+    z-index: 5;
     position: absolute;
-    width: calc(100% - 18px);
-    height: calc(100% - 18px);
+    overflow: hidden;
     left: 0px;
     top: 0px;
     padding: 9px;

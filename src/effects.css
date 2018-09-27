@@ -1,11 +1,43 @@
 .image-container .hover-content.fadeIn {
+    width: calc(100% - 18px);
+    height: calc(100% - 18px);
     visibility: visible;
     opacity: 1;
     transition: visibility 0s linear 0s, opacity 300ms;
 }
 
 .image-container .hover-content.fadeOut {
+    z-index: 0;
+    width: calc(100% - 18px);
+    height: calc(100% - 18px);
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s linear 300s, opacity 300ms;
+}
+
+.image-container .hover-content.slideVertical {
+    width: calc(100% - 18px);
+    height: calc(100% - 18px);
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: height 0.1s linear;
+    -moz-transition: height 0.1s linear;
+    -ms-transition: height 0.1s linear;
+    -o-transition: height 0.1s linear;
+    transition: height 0.1s linear;
+}
+
+.image-container .hover-content.slideVerticalOut {
+    z-index: 0;
+    width: calc(100% - 18px);
+    height: 0px;
+    visibility: visible;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    opacity: 1;
+    -webkit-transition: height 0.1s linear;
+    -moz-transition: height 0.1s linear;
+    -ms-transition: height 0.1s linear;
+    -o-transition: height 0.1s linear;
+    transition: height 0.1s linear;
 }

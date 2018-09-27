@@ -1,6 +1,6 @@
 const effects = {
     fadeIn: 'fadeOut',
     zoomIn: 'zoomOut',
-    slideIn: 'slideOut',
+    slideVertical: 'slideVerticalOut',
 };
 export default effects;
